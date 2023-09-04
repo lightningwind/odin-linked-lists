@@ -23,6 +23,7 @@ class LinkedList {
     const node = new Node(value);
     if (this.size === 0) {
       this.head = node;
+      this.tail = node;
     } else {
       node.next = this.head;
       this.head = node; // Update head
@@ -117,7 +118,7 @@ class LinkedList {
       cur = cur.next;
     }
 
-    return `${str}-> null`;
+    return `${str}null`;
   }
 
 
@@ -131,3 +132,18 @@ class Node {
 }
 
 // Driver code
+const list = new LinkedList();
+list.prepend(1);
+list.append(2);
+list.append(3);
+list.append(4);
+
+console.log(list.toString());
+console.log(list.size);
+console.log(list.getHead);
+console.log(list.getTail);
+console.log(list.at(2));
+console.log(list.pop());
+console.log(list.contains(3));
+console.log(list.find(2));
+console.log(list.toString());
